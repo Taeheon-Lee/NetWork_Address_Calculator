@@ -24,11 +24,12 @@ while sub_mas[i] == "255":
     answer_net.append(str(net_add[i]))
     answer_broad.append(str(net_add[i]))
     i += 1
-bi_sub = str(casting.de_to_bi(int(sub_mas[i])))
-div = bi_sub.index("0")
-bi_net = str(casting.de_to_bi(int(net_add[i])))
-tmp_net = bi_net[:div] + "0" * (8 - div)
-tmp_broad = bi_net[:div] + "1" * (8 - div)
+BI_SUB = str(casting.de_to_bi(int(sub_mas[i])))
+DIV = BI_SUB.index("0")
+CNT = 8 - DIV
+BI_NET = str(casting.de_to_bi(int(net_add[i])))
+tmp_net = BI_NET[:DIV] + "0" * (CNT)
+tmp_broad = BI_NET[:DIV] + "1" * (CNT)
 answer_net.append(str(casting.bi_to_de(int(tmp_net))))
 answer_broad.append(str(casting.bi_to_de(int(tmp_broad))))
 i += 1
@@ -36,5 +37,14 @@ while i != 4:
     answer_net.append("0")
     answer_broad.append("255")
     i += 1
+    CNT += 8
+answer_start = answer_net[:]
+answer_start[-1] = str(int(answer_start[-1]) + 1)
+answer_end = answer_broad[:]
+answer_end[-1] = str(int(answer_end[-1]) - 1)
+print ("\n======================RETURNS======================\n")
 print ("Net Address         : " + ".".join(answer_net))
 print ("Broadcast Adress    : " + ".".join(answer_broad))
+print ("Allocable range     : " + ".".join(answer_start) + " - " + ".".join(answer_end))
+print ("Number of ranges    : " + "2^" + str(CNT) + " - 2 (" + str(2 ** CNT - 2) + ")")
+print ()
