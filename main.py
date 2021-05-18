@@ -24,9 +24,9 @@ while sub_mas[i] == "255":
     answer_net.append(str(net_add[i]))
     answer_broad.append(str(net_add[i]))
     i += 1
-bi_sub = casting.de_to_bi(int(sub_mas[i]))
+bi_sub = str(casting.de_to_bi(int(sub_mas[i])))
 div = bi_sub.index("0")
-bi_net = casting.de_to_bi(int(net_add[i]))
+bi_net = str(casting.de_to_bi(int(net_add[i])))
 tmp_net = bi_net[:div] + "0" * (8 - div)
 tmp_broad = bi_net[:div] + "1" * (8 - div)
 answer_net.append(str(casting.bi_to_de(int(tmp_net))))
@@ -36,5 +36,5 @@ while i != 4:
     answer_net.append("0")
     answer_broad.append("255")
     i += 1
-print (".".join(answer_net))
-print (".".join(answer_broad))
+print ("Net Address         : " + ".".join(answer_net))
+print ("Broadcast Adress    : " + ".".join(answer_broad))

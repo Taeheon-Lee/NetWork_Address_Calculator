@@ -31,4 +31,4 @@ def bi_to_de(input_num):
         fac = fac * 2
         answer = answer + input_num % 10 * fac
         input_num = input_num // 10
-    return str(int(answer))
+    return int(answer)
