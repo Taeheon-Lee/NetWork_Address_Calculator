@@ -42,6 +42,7 @@ answer_start = answer_net[:]
 answer_start[-1] = str(int(answer_start[-1]) + 1)
 answer_end = answer_broad[:]
 answer_end[-1] = str(int(answer_end[-1]) - 1)
+
 print ("\n======================RETURNS======================\n")
 print ("Net Address         : " + ".".join(answer_net))
 print ("Broadcast Adress    : " + ".".join(answer_broad))
