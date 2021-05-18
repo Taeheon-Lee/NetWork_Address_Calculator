@@ -13,7 +13,7 @@ def de_to_bi(input_num):
         tmp = input_num % 2
         input_num = input_num // 2
         answer = str(tmp) + answer
-    return answer
+    return int(answer)
 
 def bi_to_de(input_num):
     """
@@ -29,4 +29,4 @@ def bi_to_de(input_num):
         fac = fac * 2
         answer = answer + input_num % 10 * fac
         input_num = input_num // 10
-    return answer
+    return int(answer)
