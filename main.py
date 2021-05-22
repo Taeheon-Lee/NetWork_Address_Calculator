@@ -4,14 +4,20 @@ import casting
 import subnet
 
 while 1:
-    select = int(input("Type 1 or 2 or 0\n\n\
+    select = input("Type 1 or 2 or 0\n\n\
 1. Network Calculator\n\
 2. Max subnet mask for communicating\n\
 0. Exit program\n\n\
-Type number : "))
+Type number : ")
+
+    if not select.isdecimal():
+        print("\033[33m \nType number \033[31monly\n \033[37m")
+        continue
+
+    select = int(select)
 
     if select == 0:
-        print("\nGOODBYE :)\n")
+        print("\033[33m \nGOODBYE :)\n \033[37m")
         break
 
     if select == 1:
@@ -112,5 +118,5 @@ Type number : "))
         input("\033[37m Press Enter to continue...\n")
 
     else:
-        print("Type 1 or 2 or 0")
+        print("\033[33m \nInput number is no correct. Type 1 or 2 or 0\n \033[37m")
         continue
