@@ -118,5 +118,5 @@ Type number : ")
         input("\033[37m Press Enter to continue...\n")
 
     else:
-        print("\033[33m \nInput number is no correct. Type 1 or 2 or 0\n \033[37m")
+        print("\033[33m \nInput number is not correct. Type 1 or 2 or 0\n \033[37m")
         continue
